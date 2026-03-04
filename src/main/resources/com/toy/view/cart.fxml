@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
-
-</AnchorPane>
+<VBox spacing="20" style="-fx-padding: 30;" xmlns:fx="http://javafx.com/fxml" fx:controller="com.toy.controller.CartController">
+    <Label text="Корзина покупок" style="-fx-font-size: 22; -fx-font-weight: bold;"/>
+    <ListView fx:id="cartList" prefHeight="300"/>
+    <HBox alignment="CENTER_RIGHT" spacing="15">
+        <Label fx:id="totalLabel" style="-fx-font-size: 18;"/>
+        <Button text="Купить" onAction="#placeOrder" style="-fx-background-color: #27ae60; -fx-text-fill: white;"/>
+    </HBox>
+    <Button text="Назад" onAction="#goBack"/>
+</VBox>

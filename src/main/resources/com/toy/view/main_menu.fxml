@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
-
-</AnchorPane>
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.toy.controller.MainController">
+    <top>
+        <HBox spacing="10" style="-fx-background-color: #2c3e50; -fx-padding: 15;">
+            <TextField fx:id="searchField" promptText="Поиск игрушек..." onKeyReleased="#handleSearch"/>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button text="Профиль" onAction="#goToProfile" style="-fx-cursor: hand;"/>
+            <Button text="Корзина" onAction="#goToCart" style="-fx-cursor: hand;"/>
+        </HBox>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true">
+            <FlowPane fx:id="toyContainer" hgap="20" vgap="20" style="-fx-padding: 20;" />
+        </ScrollPane>
+    </center>
+</BorderPane>
