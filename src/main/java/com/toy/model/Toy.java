@@ -2,10 +2,14 @@ package com.toy.model;
 
 public class Toy {
     public int id;
-    public int category_id; // Поле из схемы БД
+    public Integer category_id;
     public String name;
-    public int age_from; // Поле из схемы БД
+    public int age_from;
     public double price;
-    public int stock_qty; // Поле из схемы БД
+    public int stock_qty;
+    public int min_stock;
     public String description;
+    public String color;
+    public String material;
+    public String size;
 }

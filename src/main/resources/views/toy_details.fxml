@@ -2,14 +2,23 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox spacing="20" alignment="CENTER" style="-fx-padding: 25;"
+<VBox spacing="20" alignment="CENTER"
+      style="-fx-padding:30; -fx-background-color:#f0f2f5;"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.toy.controller.ToyDetailsController">
-    <Label fx:id="nameLabel" style="-fx-font-size: 22; -fx-font-weight: bold;" />
-    <Label fx:id="categoryLabel" style="-fx-text-fill: gray;" />
-    <TextArea fx:id="descArea" editable="false" wrapText="true" prefHeight="150" />
+    <Label fx:id="nameLabel"
+           style="-fx-font-size:22px; -fx-font-weight:bold; -fx-text-fill:#2c3e50;"/>
+    <Label fx:id="categoryLabel"
+           style="-fx-text-fill:#95a5a6; -fx-font-size:13px;"/>
+    <TextArea fx:id="descArea" editable="false" wrapText="true" prefHeight="150"
+              style="-fx-background-radius:8; -fx-border-color:#dde1e7; -fx-padding:10;
+                     -fx-background-color:white;"/>
     <HBox spacing="15" alignment="CENTER">
-        <Label fx:id="priceLabel" style="-fx-font-size: 18; -fx-text-fill: green;" />
-        <Button text="Добавить в корзину" onAction="#addToCart" />
+        <Label fx:id="priceLabel"
+               style="-fx-font-size:20px; -fx-font-weight:bold; -fx-text-fill:#27ae60;"/>
+        <Button text="🛒 Добавить в корзину" onAction="#addToCart"
+                style="-fx-background-color:#27ae60; -fx-text-fill:white;
+                       -fx-background-radius:8; -fx-cursor:hand; -fx-font-weight:bold;
+                       -fx-padding:10 20 10 20;"/>
     </HBox>
 </VBox>

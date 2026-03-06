@@ -1,0 +1,234 @@
+/* ===== БАЗОВЫЕ НАСТРОЙКИ ===== */
+.root {
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+    -fx-background-color: #f0f2f5;
+    -fx-font-size: 13px;
+}
+
+/* ===== КНОПКИ БАЗОВЫЕ ===== */
+.button {
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-padding: 8 18 8 18;
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 4, 0, 0, 2);
+}
+.button:hover {
+    -fx-opacity: 0.88;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 8, 0, 0, 3);
+}
+.button:pressed {
+    -fx-effect: none;
+    -fx-opacity: 0.75;
+}
+
+/* ===== ЦВЕТОВЫЕ КЛАССЫ КНОПОК ===== */
+.btn-green  { -fx-background-color: #27ae60; -fx-text-fill: white; }
+.btn-blue   { -fx-background-color: #2980b9; -fx-text-fill: white; }
+.btn-red    { -fx-background-color: #e74c3c; -fx-text-fill: white; }
+.btn-orange { -fx-background-color: #e67e22; -fx-text-fill: white; }
+.btn-purple { -fx-background-color: #8e44ad; -fx-text-fill: white; }
+.btn-teal   { -fx-background-color: #16a085; -fx-text-fill: white; }
+.btn-dark   { -fx-background-color: #2c3e50; -fx-text-fill: white; }
+.btn-gray   { -fx-background-color: #95a5a6; -fx-text-fill: white; }
+.btn-light  {
+    -fx-background-color: #ecf0f1;
+    -fx-text-fill: #2c3e50;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 1;
+}
+
+/* ===== КАТЕГОРИИ ===== */
+.cat-btn {
+    -fx-background-color: rgba(255,255,255,0.15);
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: rgba(255,255,255,0.4);
+    -fx-border-width: 1;
+    -fx-padding: 5 16 5 16;
+    -fx-font-size: 12px;
+    -fx-cursor: hand;
+}
+.cat-btn:hover {
+    -fx-background-color: rgba(255,255,255,0.30);
+}
+.cat-btn-active {
+    -fx-background-color: white;
+    -fx-text-fill: #2c3e50;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-padding: 5 16 5 16;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+/* ===== КАРТОЧКА ТОВАРА ===== */
+.toy-card {
+    -fx-background-color: white;
+    -fx-border-color: #e8ecef;
+    -fx-border-width: 1;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.07), 8, 0, 0, 3);
+}
+.toy-card:hover {
+    -fx-border-color: #3498db;
+    -fx-effect: dropshadow(gaussian, rgba(52,152,219,0.20), 12, 0, 0, 4);
+}
+.toy-card-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+.toy-card-price {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #27ae60;
+}
+.toy-card-meta {
+    -fx-font-size: 11px;
+    -fx-text-fill: #95a5a6;
+}
+.toy-card-stock-ok  { -fx-font-size: 11px; -fx-text-fill: #27ae60; }
+.toy-card-stock-low { -fx-font-size: 11px; -fx-text-fill: #e74c3c; }
+
+/* ===== ПОЛЕ ПОИСКА ===== */
+.search-field {
+    -fx-background-radius: 22;
+    -fx-border-radius: 22;
+    -fx-border-color: rgba(255,255,255,0.3);
+    -fx-background-color: rgba(255,255,255,0.15);
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: rgba(255,255,255,0.6);
+    -fx-padding: 7 15 7 15;
+    -fx-font-size: 13px;
+}
+.search-field:focused {
+    -fx-background-color: rgba(255,255,255,0.25);
+    -fx-border-color: rgba(255,255,255,0.7);
+}
+
+/* ===== ТЕКСТОВЫЕ ПОЛЯ ===== */
+.text-field, .password-field, .text-area {
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #dde1e7;
+    -fx-border-width: 1;
+    -fx-padding: 8 12 8 12;
+    -fx-background-color: white;
+}
+.text-field:focused, .password-field:focused, .text-area:focused {
+    -fx-border-color: #3498db;
+    -fx-effect: dropshadow(gaussian, rgba(52,152,219,0.15), 6, 0, 0, 0);
+}
+
+/* ===== COMBO BOX ===== */
+.combo-box {
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #dde1e7;
+    -fx-background-color: white;
+    -fx-padding: 3 8 3 8;
+}
+
+/* ===== НАВИГАЦИОННАЯ ПАНЕЛЬ ===== */
+.nav-bar {
+    -fx-background-color: linear-gradient(to right, #1a252f, #2c3e50);
+    -fx-padding: 12 20 12 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0, 0, 4);
+}
+.nav-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+.cat-bar {
+    -fx-background-color: #34495e;
+    -fx-padding: 8 20 8 20;
+}
+
+/* ===== СПИСОК (ListView) ===== */
+.list-view {
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #e8ecef;
+    -fx-background-color: white;
+}
+.list-view .list-cell:filled:selected {
+    -fx-background-color: #d6eaf8;
+    -fx-text-fill: #2c3e50;
+}
+.list-view .list-cell:filled:hover {
+    -fx-background-color: #eaf4fb;
+}
+
+/* ===== ТАБЛИЦА ===== */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #e8ecef;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+.table-view .column-header {
+    -fx-background-color: #34495e;
+}
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+.table-row-cell:selected { -fx-background-color: #d6eaf8; }
+.table-row-cell:hover    { -fx-background-color: #eaf4fb; }
+
+/* ===== ЗАГОЛОВКИ СТРАНИЦ ===== */
+.page-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+.section-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #34495e;
+}
+
+/* ===== ПАНЕЛЬ АДМИНИСТРАТОРА — ПЛИТКИ ===== */
+.admin-tile {
+    -fx-background-color: white;
+    -fx-border-color: #e8ecef;
+    -fx-border-width: 1;
+    -fx-border-radius: 14;
+    -fx-background-radius: 14;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.07), 8, 0, 0, 3);
+    -fx-cursor: hand;
+    -fx-min-width: 170;
+    -fx-min-height: 150;
+}
+.admin-tile:hover {
+    -fx-effect: dropshadow(gaussian, rgba(52,152,219,0.22), 14, 0, 0, 5);
+    -fx-border-color: #3498db;
+}
+.admin-tile-icon  { -fx-font-size: 40px; }
+.admin-tile-label {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+.admin-tile-desc  { -fx-font-size: 11px; -fx-text-fill: #95a5a6; }
+
+/* ===== BADGE (статус заказа) ===== */
+.badge-new       { -fx-text-fill: #2980b9; -fx-font-weight: bold; }
+.badge-pending   { -fx-text-fill: #e67e22; -fx-font-weight: bold; }
+.badge-shipped   { -fx-text-fill: #8e44ad; -fx-font-weight: bold; }
+.badge-delivered { -fx-text-fill: #27ae60; -fx-font-weight: bold; }
+.badge-cancelled { -fx-text-fill: #e74c3c; -fx-font-weight: bold; }
+
+/* ===== РАЗДЕЛИТЕЛЬ ===== */
+.separator .line { -fx-border-color: #e8ecef; }
+
+/* ===== СКРОЛЛ ===== */
+.scroll-pane { -fx-background-color: transparent; }
+.scroll-pane > .viewport { -fx-background-color: transparent; }

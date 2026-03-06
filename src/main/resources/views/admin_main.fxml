@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.toy.controller.AdminMainController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="15"
+              style="-fx-background-color:#1a252f; -fx-padding:15 20 15 20;">
+            <Label text="🔑 Панель администратора"
+                   style="-fx-font-size:20px; -fx-font-weight:bold; -fx-text-fill:white;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <VBox alignment="CENTER_RIGHT" spacing="2">
+                <Label fx:id="welcomeLabel"
+                       style="-fx-text-fill:rgba(255,255,255,0.85); -fx-font-size:12px;"/>
+                <Label fx:id="statsLabel"
+                       style="-fx-text-fill:rgba(255,255,255,0.55); -fx-font-size:11px;"/>
+            </VBox>
+            <Button text="⏻  Выйти" onAction="#handleLogout"
+                    style="-fx-background-color:#e74c3c; -fx-text-fill:white;
+                           -fx-background-radius:8; -fx-font-weight:bold;
+                           -fx-cursor:hand; -fx-padding:8 16 8 16;"/>
+        </HBox>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true"
+                    style="-fx-background-color:#f0f2f5;">
+            <VBox spacing="30"
+                  style="-fx-padding:40 60 40 60; -fx-background-color:#f0f2f5;">
+                <Label text="Что хотите сделать?"
+                       style="-fx-font-size:22px; -fx-font-weight:bold; -fx-text-fill:#2c3e50;"/>
+                <HBox spacing="20" alignment="CENTER_LEFT">
+                    <VBox alignment="CENTER" spacing="10"
+                          style="-fx-background-color:white; -fx-border-color:#e8ecef;
+                                 -fx-border-width:1; -fx-border-radius:14;
+                                 -fx-background-radius:14; -fx-padding:24;
+                                 -fx-min-width:170; -fx-min-height:160;
+                                 -fx-cursor:hand;">
+                        <Label text="📦" style="-fx-font-size:40px;"/>
+                        <Label text="Товары"
+                               style="-fx-font-size:15px; -fx-font-weight:bold; -fx-text-fill:#2c3e50;"/>
+                        <Label text="Карточки, цены, описания"
+                               style="-fx-font-size:11px; -fx-text-fill:#95a5a6;"/>
+                        <Button text="Открыть" onAction="#goToToys"
+                                maxWidth="Infinity"
+                                style="-fx-background-color:#8e44ad; -fx-text-fill:white;
+                                       -fx-background-radius:8; -fx-cursor:hand;
+                                       -fx-font-weight:bold;"/>
+                    </VBox>
+                    <VBox alignment="CENTER" spacing="10"
+                          style="-fx-background-color:white; -fx-border-color:#e8ecef;
+                                 -fx-border-width:1; -fx-border-radius:14;
+                                 -fx-background-radius:14; -fx-padding:24;
+                                 -fx-min-width:170; -fx-min-height:160;
+                                 -fx-cursor:hand;">
+                        <Label text="🏭" style="-fx-font-size:40px;"/>
+                        <Label text="Склад"
+                               style="-fx-font-size:15px; -fx-font-weight:bold; -fx-text-fill:#2c3e50;"/>
+                        <Label text="Остатки и перемещения"
+                               style="-fx-font-size:11px; -fx-text-fill:#95a5a6;"/>
+                        <Button text="Открыть" onAction="#goToStock"
+                                maxWidth="Infinity"
+                                style="-fx-background-color:#e67e22; -fx-text-fill:white;
+                                       -fx-background-radius:8; -fx-cursor:hand;
+                                       -fx-font-weight:bold;"/>
+                    </VBox>
+                    <VBox alignment="CENTER" spacing="10"
+                          style="-fx-background-color:white; -fx-border-color:#e8ecef;
+                                 -fx-border-width:1; -fx-border-radius:14;
+                                 -fx-background-radius:14; -fx-padding:24;
+                                 -fx-min-width:170; -fx-min-height:160;
+                                 -fx-cursor:hand;">
+                        <Label text="📋" style="-fx-font-size:40px;"/>
+                        <Label text="Заказы"
+                               style="-fx-font-size:15px; -fx-font-weight:bold; -fx-text-fill:#2c3e50;"/>
+                        <Label text="Статус и доставка"
+                               style="-fx-font-size:11px; -fx-text-fill:#95a5a6;"/>
+                        <Button text="Открыть" onAction="#goToOrders"
+                                maxWidth="Infinity"
+                                style="-fx-background-color:#16a085; -fx-text-fill:white;
+                                       -fx-background-radius:8; -fx-cursor:hand;
+                                       -fx-font-weight:bold;"/>
+                    </VBox>
+                    <VBox alignment="CENTER" spacing="10"
+                          style="-fx-background-color:white; -fx-border-color:#e8ecef;
+                                 -fx-border-width:1; -fx-border-radius:14;
+                                 -fx-background-radius:14; -fx-padding:24;
+                                 -fx-min-width:170; -fx-min-height:160;
+                                 -fx-cursor:hand;">
+                        <Label text="🧾" style="-fx-font-size:40px;"/>
+                        <Label text="Чеки"
+                               style="-fx-font-size:15px; -fx-font-weight:bold; -fx-text-fill:#2c3e50;"/>
+                        <Label text="Документы продаж"
+                               style="-fx-font-size:11px; -fx-text-fill:#95a5a6;"/>
+                        <Button text="Открыть" onAction="#goToReceipts"
+                                maxWidth="Infinity"
+                                style="-fx-background-color:#2980b9; -fx-text-fill:white;
+                                       -fx-background-radius:8; -fx-cursor:hand;
+                                       -fx-font-weight:bold;"/>
+                    </VBox>
+                </HBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

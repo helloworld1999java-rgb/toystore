@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.toy.controller.OrdersController">
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT"
+              style="-fx-background-color:#1a252f; -fx-padding:12 20 12 20;">
+            <Label text="📋 Управление заказами"
+                   style="-fx-font-size:16px; -fx-font-weight:bold; -fx-text-fill:white;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="← Назад" onAction="#goBack"
+                    style="-fx-background-color:#95a5a6; -fx-text-fill:white;
+                           -fx-background-radius:8; -fx-cursor:hand;"/>
+            <Button text="🔄 Обновить" onAction="#refreshOrders"
+                    style="-fx-background-color:#2980b9; -fx-text-fill:white;
+                           -fx-background-radius:8; -fx-cursor:hand;"/>
+        </HBox>
+    </top>
+    <center>
+        <SplitPane>
+            <VBox spacing="8" style="-fx-padding:15;" prefWidth="500">
+                <Label text="Список заказов"
+                       style="-fx-font-weight:bold; -fx-font-size:14px;"/>
+                <ListView fx:id="ordersList" VBox.vgrow="ALWAYS"
+                          style="-fx-background-radius:10; -fx-border-color:#e8ecef;"/>
+            </VBox>
+            <VBox spacing="12" style="-fx-padding:20; -fx-background-color:white;">
+                <Label text="Управление заказом"
+                       style="-fx-font-weight:bold; -fx-font-size:14px;"/>
+                <Label text="Статус:" style="-fx-text-fill:#555;"/>
+                <ComboBox fx:id="statusCombo" maxWidth="Infinity"
+                          style="-fx-background-radius:8;"/>
+                <Button text="Обновить статус" onAction="#updateStatus"
+                        maxWidth="Infinity"
+                        style="-fx-background-color:#3498db; -fx-text-fill:white;
+                               -fx-background-radius:8; -fx-cursor:hand; -fx-font-weight:bold;"/>
+                <Separator/>
+                <Label text="Информация о доставке:"
+                       style="-fx-text-fill:#555; -fx-font-weight:bold;"/>
+                <TextField fx:id="trackingField" promptText="Трек-номер"
+                           style="-fx-background-radius:8; -fx-border-color:#dde1e7; -fx-padding:8;"/>
+                <TextField fx:id="deliveryDateField" promptText="Дата доставки (YYYY-MM-DD)"
+                           style="-fx-background-radius:8; -fx-border-color:#dde1e7; -fx-padding:8;"/>
+                <Button text="Сохранить доставку" onAction="#updateDelivery"
+                        maxWidth="Infinity"
+                        style="-fx-background-color:#27ae60; -fx-text-fill:white;
+                               -fx-background-radius:8; -fx-cursor:hand; -fx-font-weight:bold;"/>
+            </VBox>
+        </SplitPane>
+    </center>
+</BorderPane>

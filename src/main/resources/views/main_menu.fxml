@@ -1,19 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
 
-<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.toy.controller.MainController">
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.toy.controller.MainController">
+
+    <!-- ── ВЕРХНЯЯ ПАНЕЛЬ ── -->
     <top>
-        <HBox spacing="10" style="-fx-background-color: #2c3e50; -fx-padding: 15;">
-            <TextField fx:id="searchField" promptText="Поиск игрушек..." onKeyReleased="#handleSearch"/>
-            <Region HBox.hgrow="ALWAYS" />
-            <Button text="Профиль" onAction="#goToProfile" style="-fx-cursor: hand;"/>
-            <Button text="Корзина" onAction="#goToCart" style="-fx-cursor: hand;"/>
+        <HBox spacing="12" alignment="CENTER_LEFT"
+              style="-fx-background-color:linear-gradient(to right,#1a252f,#2c3e50);
+                     -fx-padding:12 20 12 20;">
+            <Label text="🧸 ToyStore"
+                   style="-fx-font-size:20px; -fx-font-weight:bold; -fx-text-fill:white;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <TextField fx:id="searchField"
+                       promptText="🔍  Поиск товаров..."
+                       onKeyReleased="#handleSearch"
+                       prefWidth="300"
+                       style="-fx-background-radius:22; -fx-border-radius:22;
+                              -fx-background-color:rgba(255,255,255,0.15);
+                              -fx-text-fill:white; -fx-padding:7 15 7 15;
+                              -fx-prompt-text-fill:rgba(255,255,255,0.6);"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="👤 Профиль" onAction="#goToProfile"
+                    style="-fx-background-color:#8e44ad; -fx-text-fill:white;
+                           -fx-background-radius:8; -fx-cursor:hand;
+                           -fx-font-weight:bold; -fx-padding:8 14 8 14;"/>
         </HBox>
     </top>
+
+    <!-- ── ЛЕВАЯ ПАНЕЛЬ: категории ── -->
+    <left>
+        <VBox fx:id="categoriesBox" spacing="4"
+              style="-fx-background-color:#2c3e50;
+                     -fx-padding:20 10 20 10;
+                     -fx-min-width:160;
+                     -fx-pref-width:160;">
+            <Label text="КАТЕГОРИИ"
+                   style="-fx-text-fill:rgba(255,255,255,0.45);
+                          -fx-font-size:10px;
+                          -fx-font-weight:bold;
+                          -fx-padding:0 0 8 6;"/>
+        </VBox>
+    </left>
+
+    <!-- ── ЦЕНТР: карточки товаров ── -->
     <center>
-        <ScrollPane fitToWidth="true">
-            <FlowPane fx:id="toyContainer" hgap="20" vgap="20" style="-fx-padding: 20;" />
+        <ScrollPane fitToWidth="true"
+                    style="-fx-background-color:#f0f2f5;">
+            <FlowPane fx:id="toyContainer"
+                      hgap="16" vgap="16"
+                      style="-fx-padding:20; -fx-background-color:#f0f2f5;"
+                      prefWrapLength="900"/>
         </ScrollPane>
     </center>
+
+    <!-- ── НИЖНЯЯ ПАНЕЛЬ: Заказы, Чеки, Корзина по центру ── -->
+    <bottom>
+        <HBox spacing="0" alignment="CENTER"
+              style="-fx-background-color:#1a252f;
+                     -fx-padding:0;
+                     -fx-border-color:#34495e;
+                     -fx-border-width:1 0 0 0;">
+            <Button text="📋  Заказы" onAction="#goToOrders"
+                    prefWidth="160" prefHeight="48"
+                    style="-fx-background-color:transparent;
+                           -fx-text-fill:rgba(255,255,255,0.85);
+                           -fx-font-size:13px; -fx-font-weight:bold;
+                           -fx-cursor:hand; -fx-background-radius:0;
+                           -fx-border-color:transparent #34495e transparent transparent;
+                           -fx-border-width:0 1 0 0;"/>
+            <Button text="🧾  Чеки" onAction="#goToReceipts"
+                    prefWidth="160" prefHeight="48"
+                    style="-fx-background-color:transparent;
+                           -fx-text-fill:rgba(255,255,255,0.85);
+                           -fx-font-size:13px; -fx-font-weight:bold;
+                           -fx-cursor:hand; -fx-background-radius:0;
+                           -fx-border-color:transparent #34495e transparent transparent;
+                           -fx-border-width:0 1 0 0;"/>
+            <Button text="🛒  Корзина" onAction="#goToCart"
+                    prefWidth="160" prefHeight="48"
+                    style="-fx-background-color:transparent;
+                           -fx-text-fill:rgba(255,255,255,0.85);
+                           -fx-font-size:13px; -fx-font-weight:bold;
+                           -fx-cursor:hand; -fx-background-radius:0;"/>
+        </HBox>
+    </bottom>
+
 </BorderPane>

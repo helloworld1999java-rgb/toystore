@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.toy.controller.StockController">
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT"
+              style="-fx-background-color:#1a252f; -fx-padding:12 20 12 20;">
+            <Label text="🏭 Склад и перемещения"
+                   style="-fx-font-size:16px; -fx-font-weight:bold; -fx-text-fill:white;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="← Назад" onAction="#goBack"
+                    style="-fx-background-color:#95a5a6; -fx-text-fill:white;
+                           -fx-background-radius:8; -fx-cursor:hand;"/>
+            <Button text="🔄 Обновить" onAction="#refresh"
+                    style="-fx-background-color:#2980b9; -fx-text-fill:white;
+                           -fx-background-radius:8; -fx-cursor:hand;"/>
+        </HBox>
+    </top>
+    <center>
+        <SplitPane orientation="VERTICAL">
+            <HBox spacing="15" style="-fx-padding:15; -fx-background-color:#f0f2f5;">
+                <VBox spacing="10" prefWidth="350"
+                      style="-fx-background-color:white; -fx-background-radius:10;
+                             -fx-padding:15; -fx-border-color:#e8ecef; -fx-border-radius:10;">
+                    <Label text="Создать перемещение / бронь"
+                           style="-fx-font-weight:bold; -fx-font-size:13px;"/>
+                    <ComboBox fx:id="toyCombo" promptText="Выберите товар"
+                              maxWidth="Infinity" style="-fx-background-radius:8;"/>
+                    <ComboBox fx:id="moveTypeCombo" promptText="Тип"
+                              maxWidth="Infinity" style="-fx-background-radius:8;"/>
+                    <TextField fx:id="qtyField" promptText="Количество"
+                               style="-fx-background-radius:8; -fx-border-color:#dde1e7; -fx-padding:8;"/>
+                    <TextField fx:id="noteField" promptText="Примечание"
+                               style="-fx-background-radius:8; -fx-border-color:#dde1e7; -fx-padding:8;"/>
+                    <HBox spacing="10">
+                        <Button text="Зафиксировать" onAction="#handleMovement"
+                                style="-fx-background-color:#3498db; -fx-text-fill:white;
+                                       -fx-background-radius:8; -fx-cursor:hand; -fx-font-weight:bold;"/>
+                        <Button text="Забронировать" onAction="#handleReserve"
+                                style="-fx-background-color:#e67e22; -fx-text-fill:white;
+                                       -fx-background-radius:8; -fx-cursor:hand; -fx-font-weight:bold;"/>
+                    </HBox>
+                </VBox>
+                <VBox spacing="8" HBox.hgrow="ALWAYS"
+                      style="-fx-background-color:white; -fx-background-radius:10;
+                             -fx-padding:15; -fx-border-color:#e8ecef; -fx-border-radius:10;">
+                    <Label text="⚠️ Товары с низким остатком"
+                           style="-fx-font-weight:bold; -fx-text-fill:#e74c3c;"/>
+                    <ListView fx:id="lowStockList" prefHeight="180"
+                              style="-fx-background-radius:8; -fx-border-color:#e8ecef;"/>
+                </VBox>
+            </HBox>
+            <VBox spacing="5" style="-fx-padding:10; -fx-background-color:#f0f2f5;">
+                <Label text="Активные бронирования"
+                       style="-fx-font-weight:bold; -fx-font-size:13px;"/>
+                <ListView fx:id="reservationsList" prefHeight="120"
+                          style="-fx-background-radius:8; -fx-border-color:#e8ecef;"/>
+            </VBox>
+            <VBox spacing="5" style="-fx-padding:10; -fx-background-color:#f0f2f5;" VBox.vgrow="ALWAYS">
+                <Label text="История перемещений"
+                       style="-fx-font-weight:bold; -fx-font-size:13px;"/>
+                <ListView fx:id="movementsList" VBox.vgrow="ALWAYS"
+                          style="-fx-background-radius:8; -fx-border-color:#e8ecef;"/>
+            </VBox>
+        </SplitPane>
+    </center>
+</BorderPane>

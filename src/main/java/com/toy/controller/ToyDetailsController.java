@@ -15,16 +15,19 @@ public class ToyDetailsController {
     private Toy currentToy;
 
     /**
-     * Метод для инициализации данных извне (например, из MainController)
+     * Инициализация данных игрушки извне (например, из MainController при выборе товара)
      */
     public void setToyData(Toy toy) {
         this.currentToy = toy;
         nameLabel.setText(toy.name);
-        categoryLabel.setText("Категория: " + toy.category_id); // Здесь можно добавить маппинг имен категорий
+        categoryLabel.setText("Категория: " + (toy.category_id != null ? toy.category_id : "Не указана"));
         priceLabel.setText(toy.price + " ₽");
         descArea.setText(toy.description != null ? toy.description : "Описание отсутствует.");
     }
 
+    /**
+     * Добавить текущую игрушку в корзину
+     */
     @FXML
     void addToCart() {
         if (currentToy != null) {

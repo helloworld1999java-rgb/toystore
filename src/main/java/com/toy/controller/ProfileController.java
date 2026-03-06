@@ -13,17 +13,18 @@ public class ProfileController {
     @FXML
     void saveChanges() {
         try {
-            String json = "{\"full_name\":\"" + nameField.getText() + "\", \"phone\":\"" + phoneField.getText() + "\"}";
-            // PATCH запрос в таблицу customers по ID пользователя
+            String json = "{\"full_name\":\"" + nameField.getText() + "\", \"phone\":\"" + phoneField.getText() + "\", \"address\":\"" + addressField.getText() + "\"}";
             ApiClient.sendRequest("/rest/v1/customers?id=eq." + UserSession.getInstance().getUserId(), "PATCH", json);
-            System.out.println("Профиль обновлен");
+            new Alert(Alert.AlertType.INFORMATION, "Профиль обновлен").show();
         } catch (Exception e) { e.printStackTrace(); }
     }
 
-    @FXML void handleLogout(javafx.event.ActionEvent event) {
+    @FXML
+    void handleLogout(javafx.event.ActionEvent event) {
         UserSession.logout();
         Navigation.switchTo(event, "/views/login.fxml");
     }
+
     @FXML
     void goBack(javafx.event.ActionEvent event) {
         Navigation.switchTo(event, "/views/main_menu.fxml");

@@ -2,12 +2,26 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox spacing="20" style="-fx-padding: 30;" xmlns:fx="http://javafx.com/fxml" fx:controller="com.toy.controller.CartController">
-    <Label text="Корзина покупок" style="-fx-font-size: 22; -fx-font-weight: bold;"/>
-    <ListView fx:id="cartList" prefHeight="300"/>
+<VBox spacing="20"
+      style="-fx-padding:30; -fx-background-color:#f0f2f5;"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.toy.controller.CartController">
+    <Label text="🛒 Корзина покупок"
+           style="-fx-font-size:22px; -fx-font-weight:bold; -fx-text-fill:#2c3e50;"/>
+    <ListView fx:id="cartList" prefHeight="350"
+              style="-fx-background-radius:10; -fx-border-radius:10;
+                     -fx-border-color:#e8ecef; -fx-background-color:white;"/>
     <HBox alignment="CENTER_RIGHT" spacing="15">
-        <Label fx:id="totalLabel" style="-fx-font-size: 18;"/>
-        <Button text="Купить" onAction="#placeOrder" style="-fx-background-color: #27ae60; -fx-text-fill: white;"/>
+        <Label fx:id="totalLabel"
+               style="-fx-font-size:18px; -fx-font-weight:bold; -fx-text-fill:#27ae60;"/>
+        <ComboBox fx:id="paymentCombo"
+                  style="-fx-background-radius:8; -fx-border-radius:8;"/>
+        <Button text="✅ Оформить заказ" onAction="#placeOrder"
+                style="-fx-background-color:#27ae60; -fx-text-fill:white;
+                       -fx-background-radius:8; -fx-font-weight:bold;
+                       -fx-cursor:hand; -fx-padding:10 20 10 20;"/>
     </HBox>
-    <Button text="Назад" onAction="#goBack"/>
+    <Button text="← Назад" onAction="#goBack"
+            style="-fx-background-color:#95a5a6; -fx-text-fill:white;
+                   -fx-background-radius:8; -fx-cursor:hand;"/>
 </VBox>
